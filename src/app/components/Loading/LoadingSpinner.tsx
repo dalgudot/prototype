@@ -4,7 +4,7 @@ import { FC } from 'react';
 
 type LoadingSpinnerProps = {
   hexColor: '#F8F9FA' | '#343A40'; // 추후 FDS의 Color로 교체
-  size: '24px' | '36px';
+  size: '24px' | '36px' | '48px';
 };
 
 const LoadingSpinner: FC<LoadingSpinnerProps> = ({ hexColor, size }) => {
