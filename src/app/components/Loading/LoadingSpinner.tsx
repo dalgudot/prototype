@@ -7,7 +7,10 @@ type LoadingSpinnerProps = {
   size: '24px' | '36px' | '48px';
 };
 
-const LoadingSpinner: FC<LoadingSpinnerProps> = ({ hexColor, size }) => {
+const LoadingSpinner: FC<LoadingSpinnerProps> = ({
+  hexColor,
+  size,
+}): JSX.Element => {
   return <Spinner hexColor={hexColor} size={size} />;
 };
 
