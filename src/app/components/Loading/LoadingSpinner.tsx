@@ -2,10 +2,10 @@
 import styled from '@emotion/styled';
 import { FC } from 'react';
 
-type LoadingSpinnerProps = {
+interface LoadingSpinnerProps {
   hexColor: '#F8F9FA' | '#343A40';
   size: '24px' | '36px' | '48px';
-};
+}
 
 const LoadingSpinner: FC<LoadingSpinnerProps> = ({
   hexColor,
