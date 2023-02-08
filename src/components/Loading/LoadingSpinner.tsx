@@ -1,20 +1,17 @@
 'use client';
 import styled from '@emotion/styled';
-import { FC } from 'react';
 
 interface LoadingSpinnerProps {
   hexColor: '#F8F9FA' | '#343A40';
   size: '24px' | '36px' | '48px';
 }
 
-const LoadingSpinner: FC<LoadingSpinnerProps> = ({
+export default function LoadingSpinner({
   hexColor,
   size,
-}): JSX.Element => {
+}: LoadingSpinnerProps): JSX.Element {
   return <Spinner hexColor={hexColor} size={size} />;
-};
-
-export default LoadingSpinner;
+}
 
 const Spinner = styled.div<LoadingSpinnerProps>`
   width: ${({ size }) => size};
@@ -24,6 +21,7 @@ const Spinner = styled.div<LoadingSpinnerProps>`
   border-radius: 50%;
   display: inline-block;
   box-sizing: border-box;
+
   animation: rotation 0.85s linear infinite;
 
   @keyframes rotation {
