@@ -1,6 +1,6 @@
 import s from './FloatingArea.module.css';
 import classNames from 'classnames';
-import { useMountedForAnimation } from '@/hooks/useMountedForAnimation';
+import { useMountedForDisappearAnimation } from '@/hooks/useMountedForDisappearAnimation';
 
 interface FloatingAreaProps {
   appear: boolean;
@@ -12,14 +12,14 @@ export default function FloatingAreaCSS({
   appear,
 }: FloatingAreaProps): JSX.Element {
   // [How?] 0.5는 Typescript & CSS 함께 쓸 수 있도록 상수화 필요
-  const isMountedForAnimation = useMountedForAnimation(
+  const isMountedForDisappearAnimation = useMountedForDisappearAnimation(
     appear,
     FLOATING_AREA_MOTION_TIME
   );
 
   return (
     <>
-      {isMountedForAnimation && (
+      {isMountedForDisappearAnimation && (
         // ❌ classNames & CSS를 활용한 방식 -> 변수 상수화에 문제!
         <div
           className={classNames(

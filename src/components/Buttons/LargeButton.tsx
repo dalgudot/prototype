@@ -1,4 +1,3 @@
-'use client';
 import styled from '@emotion/styled';
 
 interface LargeButtonProps {
@@ -21,7 +20,8 @@ export default function LargeButton({
 
 const Button = styled.button`
   font-size: 16px;
-  padding: 16px 12px;
+  padding: 14px 12px;
+  border-radius: 8px;
 
   background-color: #fff;
   color: #000000;

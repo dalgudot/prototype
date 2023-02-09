@@ -1,32 +1,35 @@
-import { useMountedForAnimation } from '@/hooks/useMountedForAnimation';
+import { useMountedForDisappearAnimation } from '@/hooks/useMountedForDisappearAnimation';
 import styled from '@emotion/styled';
 
-interface FloatingAreaProps {
+interface FloatingContainerProps {
   appear: boolean;
+}
+
+interface FloatingAreaProps extends FloatingContainerProps {
   content: JSX.Element;
 }
 
-let FLOATING_AREA_MOTION_TIME: TAnimationDuration = 0.5;
+let FLOATING_AREA_MOTION_TIME: TAnimationDuration = 0.45;
 
 export default function FloatingArea({
   appear,
   content,
 }: FloatingAreaProps): JSX.Element {
-  const isMountedForAnimation = useMountedForAnimation(
+  const isMountedForDisappearAnimation = useMountedForDisappearAnimation(
     appear,
     FLOATING_AREA_MOTION_TIME
   );
 
   return (
     <>
-      {isMountedForAnimation && (
-        <BottomBox appear={appear}>{content}</BottomBox>
+      {isMountedForDisappearAnimation && (
+        <FloatingContainer appear={appear}>{content}</FloatingContainer>
       )}
     </>
   );
 }
 
-const BottomBox = styled.div<{ appear: boolean }>`
+const FloatingContainer = styled.div<FloatingContainerProps>`
   position: fixed;
   padding: 16px 24px;
   background: #252a2f;
@@ -34,26 +37,32 @@ const BottomBox = styled.div<{ appear: boolean }>`
 
   ${({ appear }) =>
     appear
-      ? `animation: ${FLOATING_AREA_MOTION_TIME}s var(--bezier-1) up;
+      ? `animation: slide__in__with__scaleEffect ${FLOATING_AREA_MOTION_TIME}s var(--bezier-1);
          bottom: 36px;`
-      : `animation: ${FLOATING_AREA_MOTION_TIME}s var(--bezier-1) down;
+      : `animation: slide__out__with__scaleEffect ${FLOATING_AREA_MOTION_TIME}s var(--bezier-1);
          bottom: -96px;`}
 
-  @keyframes up {
-    0% {
+  @keyframes slide__in__with__scaleEffect {
+    from {
       bottom: -96px;
+      transform: scale(0.75);
     }
-    100% {
+
+    to {
       bottom: 36px;
+      transform: scale(1);
     }
   }
 
-  @keyframes down {
-    0% {
+  @keyframes slide__out__with__scaleEffect {
+    from {
       bottom: 36px;
+      transform: scale(1);
     }
-    100% {
+
+    to {
       bottom: -96px;
+      transform: scale(0.8);
     }
   }
 `;

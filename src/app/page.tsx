@@ -1,14 +1,14 @@
 import { Inter } from '@next/font/google';
 import Link from 'next/link';
-import styles from './page.module.css';
+import { MainLayout } from '../components/Layout/MainLayout';
 
 const inter = Inter({ subsets: ['latin'] });
 
 export default function Home() {
   return (
-    <main className={styles.main}>
-      <Link href="/floating-area">Floating Area</Link>
+    <MainLayout>
+      <Link href="/prototype/floating-area">Floating Area</Link>
       {/* <LoadingSpinner hexColor="#F8F9FA" size="24px" /> */}
-    </main>
+    </MainLayout>
   );
 }

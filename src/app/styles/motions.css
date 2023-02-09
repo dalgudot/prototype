@@ -2,3 +2,27 @@
   --bezier-0: cubic-bezier(0.4, 0, 0.6, 1);
   --bezier-1: cubic-bezier(0.2, 0.6, 0.35, 1);
 }
+
+@keyframes fade__in__with__scaleEffect {
+  from {
+    opacity: 0;
+    transform: scale(0.85);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes fade__out__with__scaleEffect {
+  from {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  to {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+}
