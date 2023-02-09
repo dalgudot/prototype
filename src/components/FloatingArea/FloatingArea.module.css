@@ -1,0 +1,35 @@
+.floating__area {
+  position: fixed;
+  padding: 16px 24px;
+  background: #252a2f;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.appear__motion {
+  animation: 0.5s var(--bezier-1) up;
+  bottom: 36px;
+}
+
+@keyframes up {
+  0% {
+    bottom: -96px;
+  }
+  100% {
+    bottom: 36px;
+  }
+}
+
+.disappear__motion {
+  animation: 0.5s var(--bezier-1) down;
+  bottom: -96px;
+}
+
+@keyframes down {
+  0% {
+    bottom: 36px;
+  }
+  100% {
+    bottom: -96px;
+  }
+}

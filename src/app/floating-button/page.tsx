@@ -1,13 +1,23 @@
-import { Inter } from '@next/font/google';
+'use client';
 import styles from '../page.module.css';
-import FloatingButton from '@/components/Buttons/FloatingButton';
+import FloatingArea from '@/components/FloatingArea/FloatingArea';
+import { useState } from 'react';
+import LargeButton from '../../components/Buttons/LargeButton';
 
-const inter = Inter({ subsets: ['latin'] });
+export default function FloatingAreaPage(): JSX.Element {
+  const [appear, setAppear] = useState<boolean>(true);
 
-export default function Home() {
+  function toggleAppear() {
+    setAppear(!appear);
+  }
+
   return (
     <main className={styles.main}>
-      <FloatingButton />
+      <LargeButton
+        label={appear ? '사라져라' : '나타나라'}
+        onClick={toggleAppear}
+      />
+      <FloatingArea appear={appear} />
     </main>
   );
 }

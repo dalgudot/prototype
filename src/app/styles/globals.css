@@ -1,3 +1,22 @@
+button {
+  all: unset;
+  cursor: pointer;
+}
+
+ul,
+ol,
+li {
+  list-style: none;
+}
+
+a,
+button,
+input,
+select,
+textarea {
+  outline-style: none;
+}
+
 :root {
   --max-width: 1100px;
   --border-radius: 12px;
