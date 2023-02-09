@@ -37,7 +37,6 @@ const BottomBox = styled.div<{ disappear: boolean }>`
     0% {
       bottom: -96px;
     }
-
     100% {
       bottom: 36px;
     }
@@ -47,7 +46,6 @@ const BottomBox = styled.div<{ disappear: boolean }>`
     0% {
       bottom: 36px;
     }
-
     100% {
       bottom: -96px;
     }
