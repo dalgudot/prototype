@@ -41,7 +41,6 @@ const BottomBox = styled.div<{ disappear: boolean }>`
       bottom: 36px;
     }
   }
-
   @keyframes down {
     0% {
       bottom: 36px;
