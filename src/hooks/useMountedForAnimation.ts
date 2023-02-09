@@ -13,12 +13,12 @@ export function useMountedForAnimation(
       // clearTimeout(timeoutId) -> 빠르게 눌렀을 때 setTimeout 시간이 남아있어서 나타났다가 사라지는 상황 방지
       clearTimeout(timeoutId);
       setIsMountedForAnimation(true);
-      console.log('Mount For Animation');
+      console.log('Mounted For Animation');
     } else {
       setTimeoutId(
         setTimeout(() => {
           setIsMountedForAnimation(false);
-          console.log('UnMount After Animation');
+          console.log('UnMounted After Animation');
         }, duration * 1000)
       );
     }
