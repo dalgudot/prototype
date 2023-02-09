@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 
 export function useMountedForAnimation(
   appear: boolean,
-  duration: number
+  duration: TAnimationDuration
 ): boolean {
   const [isMountedForAnimation, setIsMountedForAnimation] =
     useState<boolean>(true);

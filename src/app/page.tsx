@@ -7,7 +7,7 @@ const inter = Inter({ subsets: ['latin'] });
 export default function Home() {
   return (
     <main className={styles.main}>
-      <Link href="/floating-button">Floating Area</Link>
+      <Link href="/floating-area">Floating Area</Link>
       {/* <LoadingSpinner hexColor="#F8F9FA" size="24px" /> */}
     </main>
   );
