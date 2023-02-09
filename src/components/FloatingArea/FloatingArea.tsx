@@ -24,7 +24,7 @@ export default function FloatingArea({
   );
 }
 
-const BottomBox = styled.div<{ appear: boolean }>`
+const BottomBox = styled.div<FloatingAreaProps>`
   position: fixed;
   padding: 16px 24px;
   background: #0072f6;
