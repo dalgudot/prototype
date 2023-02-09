@@ -2,7 +2,7 @@ import { Inter } from '@next/font/google';
 import Link from 'next/link';
 import styles from './page.module.css';
 import LoadingSpinner from '../components/Loading/LoadingSpinner';
-import FloatingButton from '../components/FloatingButton/FloatingButton';
+import FloatingButton from '../components/Buttons/FloatingButton';
 
 const inter = Inter({ subsets: ['latin'] });
 
