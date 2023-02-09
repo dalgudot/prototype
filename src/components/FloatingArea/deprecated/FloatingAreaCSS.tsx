@@ -6,7 +6,7 @@ interface FloatingAreaProps {
   appear: boolean;
 }
 
-let FLOATING_AREA_MOTION_TIME: number = 0.5;
+let FLOATING_AREA_MOTION_TIME: TAnimationDuration = 0.5;
 
 export default function FloatingAreaCSS({
   appear,

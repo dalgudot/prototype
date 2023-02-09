@@ -3,12 +3,14 @@ import styled from '@emotion/styled';
 
 interface FloatingAreaProps {
   appear: boolean;
+  content: JSX.Element;
 }
 
 let FLOATING_AREA_MOTION_TIME: TAnimationDuration = 0.5;
 
 export default function FloatingArea({
   appear,
+  content,
 }: FloatingAreaProps): JSX.Element {
   const isMountedForAnimation = useMountedForAnimation(
     appear,
@@ -18,18 +20,17 @@ export default function FloatingArea({
   return (
     <>
       {isMountedForAnimation && (
-        <BottomBox appear={appear}>FloatingArea</BottomBox>
+        <BottomBox appear={appear}>{content}</BottomBox>
       )}
     </>
   );
 }
 
-const BottomBox = styled.div<FloatingAreaProps>`
+const BottomBox = styled.div<{ appear: boolean }>`
   position: fixed;
   padding: 16px 24px;
-  background: #0072f6;
-  border-radius: 4px;
-  font-size: 16px;
+  background: #252a2f;
+  border-radius: 8px;
 
   ${({ appear }) =>
     appear

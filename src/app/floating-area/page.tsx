@@ -17,7 +17,15 @@ export default function FloatingAreaPage(): JSX.Element {
         label={appear ? '사라져라' : '나타나라'}
         onClick={toggleAppear}
       />
-      <FloatingArea appear={appear} />
+      <FloatingArea
+        appear={appear}
+        content={
+          <LargeButton
+            label="I'm a button in Floating Area 🤚"
+            onClick={() => {}}
+          />
+        }
+      />
     </main>
   );
 }
