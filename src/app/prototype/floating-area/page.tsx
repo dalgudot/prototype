@@ -14,7 +14,7 @@ export default function FloatingAreaPrototypePage(): JSX.Element {
   return (
     <MainLayout>
       <LargeButton
-        label={appear ? '사라져라' : '나타나라'}
+        label={appear ? 'Unmount!' : 'Mount!'}
         onClick={toggleAppear}
       />
       <FloatingArea
