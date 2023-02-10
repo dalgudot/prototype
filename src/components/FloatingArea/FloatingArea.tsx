@@ -1,4 +1,4 @@
-import { useMountedForDisappearAnimation } from '@/hooks/useMountedForDisappearAnimation';
+import { useMountedForDisappearMotion } from '@/hooks/useMountedForDisappearMotion';
 import styled from '@emotion/styled';
 
 interface FloatingContainerProps {
@@ -15,14 +15,14 @@ export default function FloatingArea({
   appear,
   content,
 }: FloatingAreaProps): JSX.Element {
-  const isMountedForDisappearAnimation = useMountedForDisappearAnimation(
+  const isMountedForDisappearMotion = useMountedForDisappearMotion(
     appear,
     FLOATING_AREA_MOTION_TIME
   );
 
   return (
     <>
-      {isMountedForDisappearAnimation && (
+      {isMountedForDisappearMotion && (
         <FloatingContainer appear={appear}>{content}</FloatingContainer>
       )}
     </>
@@ -37,9 +37,9 @@ const FloatingContainer = styled.div<FloatingContainerProps>`
 
   ${({ appear }) =>
     appear
-      ? `animation: slide__in__with__scaleEffect ${FLOATING_AREA_MOTION_TIME}s var(--bezier-1);
+      ? `animation: slide__in__with__scaleEffect ${FLOATING_AREA_MOTION_TIME}s var(--ease-out-0);
          bottom: 36px;`
-      : `animation: slide__out__with__scaleEffect ${FLOATING_AREA_MOTION_TIME}s var(--bezier-1);
+      : `animation: slide__out__with__scaleEffect ${FLOATING_AREA_MOTION_TIME}s var(--ease-out-0);
          bottom: -96px;`}
 
   @keyframes slide__in__with__scaleEffect {
